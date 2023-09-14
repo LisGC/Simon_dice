@@ -9,10 +9,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 /*
         val button = findViewById<Button>(R.id.aboutButton)
-                buttonIncrement.setOnClickListener {
-                    val intentAbout = Intent(pack)
-
-                }
+        buttonOKAbout.setOnClickListener {
+            val intentAbout = Intent(this, AboutActivity::class.java)
+            startActivity(intentAbout)
+        }
 */
     }
 }
