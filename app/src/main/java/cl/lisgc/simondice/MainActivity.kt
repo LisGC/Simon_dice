@@ -7,12 +7,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-/*
-        val button = findViewById<Button>(R.id.aboutButton)
-        buttonOKAbout.setOnClickListener {
-            val intentAbout = Intent(this, AboutActivity::class.java)
-            startActivity(intentAbout)
-        }
-*/
+
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.mainmenu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.button_settings -> {
+                val intentPreferences = Intent(this, SettingsActivity::class.java)
+                startActivity(intentPreferences)
+                return true
+            }
+            R.id.button_about -> {
+                val intentPreferences = Intent(this, AboutActivity::class.java)
+                startActivity(intentPreferences)
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
 }
