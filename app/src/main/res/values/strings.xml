@@ -1,20 +1,17 @@
 <resources>
     <string name="app_name">Simon dice</string>
-    <string name="app_author">Lisbeth Gonzalez Castillo</string>
+    <string name="app_author">Lisbeth González Castillo \n
+    ligonzalez20@alumnos.utalca</string>
     <string name="app_description">Este proyecto es un piloto para evaluar la factibilidad de poder
         desarrollar dentro de android una aplicacion que implemente un juego Simon dice, parecido a 
         bop it.
     El celular da la intruccion que el usuario debera responder dentro de cierto tiempo
     para completar la tarea, ir avanzando niveles e intentar obtener la mayor puntuacion</string>
 
-    <string name="button_A">About</string>
-    <string name="button_S">Settings</string>
+    <string name="about">Acerca</string>
+    <string name="settings">Configuración</string>
+    <string name="music">Musica</string>
 
-    <string name="activity_about">PropertyActivity</string>
-
-    <!--preferencias de splash-->
-    <string name="splash_title">Duracion Inicio</string>
-    <string name="splash_description">Duracion de la pantalla de presentación</string>
 
 
 </resources>

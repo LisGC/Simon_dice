@@ -8,15 +8,29 @@
 
     <TextView
         android:id="@+id/fechaAbout"
-        android:layout_width="388dp"
-        android:layout_height="59dp"
+        android:layout_width="377dp"
+        android:layout_height="143dp"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="624dp"
+        android:layout_marginBottom="444dp"
         android:text="@string/app_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="162dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="125dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
