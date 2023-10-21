@@ -5,40 +5,36 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.mainmenu,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+        ///About
+        val aboutNavegation = findViewById<Button>(R.id.buttonAbout)
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.buttonAbout -> {
-                val intentPreferences = Intent(this, AboutActivity::class.java)
-                startActivity(intentPreferences)
-                return true
-            }
+        aboutNavegation.setOnClickListener {
+            val intentAbout = Intent(this,AboutActivity::class.java)
+            startActivity(intentAbout)
+        }
 
-            R.id.buttonSettings -> {
-                val intentPreferences = Intent(this, SettingsActivity::class.java)
-                startActivity(intentPreferences)
-                return true
-            }
+        ///Settings
+        val settingsNavegation = findViewById<Button>(R.id.buttonSettings)
 
-            R.id.buttonMusic -> {
-                val intentPreferences = Intent(this, MusicActivity::class.java)
-                startActivity(intentPreferences)
-                return true
-            }
+        settingsNavegation.setOnClickListener {
+            val intentAbout = Intent(this,SettingsActivity::class.java)
+            startActivity(intentAbout)
+        }
 
-            else -> return super.onOptionsItemSelected(item)
+        ///Music
+        val musicNavegation = findViewById<Button>(R.id.buttonMusic)
+
+        musicNavegation.setOnClickListener {
+            val intentAbout = Intent(this,MusicActivity::class.java)
+            startActivity(intentAbout)
         }
     }
 
