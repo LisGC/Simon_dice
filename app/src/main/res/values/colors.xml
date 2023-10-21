@@ -5,4 +5,8 @@
 
     <color name="darkBrown">#3E271C</color>
     <color name="lightOrange">#F6C86A</color>
+    <color name="salmon">#F1B8A1</color>
+    <color name="aqua">#70DFC0</color>
+
+    <color name="darkRose">#BD3D5B</color>
 </resources>

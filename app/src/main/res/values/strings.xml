@@ -12,6 +12,9 @@
     <string name="settings">Configuración</string>
     <string name="music">Musica</string>
 
+    <string name="play">Reproducir</string>
+    <string name="victory">Victoria</string>
+    <string name="defeat">Derrota</string>
 
 
 </resources>

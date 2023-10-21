@@ -20,14 +20,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.button_about -> {
+            R.id.buttonAbout -> {
+                val intentPreferences = Intent(this, AboutActivity::class.java)
+                startActivity(intentPreferences)
+                return true
+            }
+
+            R.id.buttonSettings -> {
                 val intentPreferences = Intent(this, SettingsActivity::class.java)
                 startActivity(intentPreferences)
                 return true
             }
 
-            R.id.button_settings -> {
-                val intentPreferences = Intent(this, AboutActivity::class.java)
+            R.id.buttonMusic -> {
+                val intentPreferences = Intent(this, MusicActivity::class.java)
                 startActivity(intentPreferences)
                 return true
             }
