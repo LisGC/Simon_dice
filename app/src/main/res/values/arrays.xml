@@ -1,25 +1,48 @@
 <resources>
-    <!--preferencias de respuesta-->
-    <string-array name="splash_entries">
-        <item>3 segundos</item>
-        <item>5 segundos</item>
-        <item>7 segundos</item>
+
+    <string-array name="color_entries">
+        <item>Modo Claro</item>
+        <item>Modo Oscuro</item>
     </string-array>
 
-    <string-array name="splash_values">
-        <item>3000</item>
-        <item>5000</item>
-        <item>7000</item>
+    <string-array name="color_values">
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
-    <string-array name="reply_entries">
-        <item>Replay</item>
-        <item>Replay to all</item>
+    <string-array name="volume_entries">
+        <item>Alto</item>
+        <item>Medio</item>
+        <item>Bajo</item>
     </string-array>
 
-    <string-array name="reply_values">
-        <item>replay</item>
-        <item>replay_all</item>
+    <string-array name="volume_values">
+        <item>100</item>
+        <item>50</item>
+        <item>10</item>
     </string-array>
+
+    <string-array name="instruction_entries">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="instruction_values">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+
+    <string-array name="size_entries">
+        <item>Grande</item>
+        <item>Mediano</item>
+        <item>Pequeño</item>
+    </string-array>
+
+    <string-array name="size_values">
+        <item>100</item>
+        <item>50</item>
+        <item>10</item>
+    </string-array>
+
 
 </resources>

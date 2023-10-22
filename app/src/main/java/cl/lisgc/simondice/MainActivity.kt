@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val settingsNavegation = findViewById<Button>(R.id.buttonSettings)
 
         settingsNavegation.setOnClickListener {
-            val intentAbout = Intent(this,SettingsActivity::class.java)
+            val intentAbout = Intent(this,SettingsActivity2::class.java)
             startActivity(intentAbout)
         }
 

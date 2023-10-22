@@ -15,6 +15,24 @@
     <string name="play">Reproducir</string>
     <string name="victory">Victoria</string>
     <string name="defeat">Derrota</string>
+    <string name="title_activity_settings2">SettingsActivity2</string>
+
+    <!-- Preference Titles -->
+    <string name="playerData_header">Datos del Jugador</string>
+    <string name="pers_header">Personalizacion del Juego</string>
+    <string name="admin_header">Administracion General</string>
+
+    <!-- Player Preferences -->
+    <string name="player_name">Nombre</string>
+    <string name="save_score">Guardar puntaje más alto</string>
+
+    <!-- Game Preferences -->
+    <string name="game_color">Color</string>
+    <string name="game_volume">Volumen</string>
+    <string name="show_instructions">Mostrar instrucciones</string>
+    <string name="size">Tamaño de Botones y Texto</string>
+
+    <string name="restore_predet">Restablecer los valore predeterminados</string>
 
 
 </resources>
