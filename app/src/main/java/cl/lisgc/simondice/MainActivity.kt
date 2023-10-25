@@ -36,6 +36,14 @@ class MainActivity : AppCompatActivity() {
             val intentAbout = Intent(this,MusicActivity::class.java)
             startActivity(intentAbout)
         }
+
+        //Touch
+        val touchNavegation = findViewById<Button>(R.id.buttonTouch)
+
+        touchNavegation.setOnClickListener{
+            val intentAbout = Intent(this, TouchActivity::class.java)
+            startActivity(intentAbout)
+        }
     }
 
 }

@@ -11,10 +11,12 @@
     <string name="about">Acerca</string>
     <string name="settings">Configuración</string>
     <string name="music">Musica</string>
+    <string name="touchDown">Desliza</string>
 
     <string name="play">Reproducir</string>
     <string name="victory">Victoria</string>
     <string name="defeat">Derrota</string>
+    <string name="touch">Toca</string>
     <string name="title_activity_settings2">SettingsActivity2</string>
 
     <!-- Preference Titles -->

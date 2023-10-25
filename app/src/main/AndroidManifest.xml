@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SimonDice"
         tools:targetApi="31">
         <activity
+            android:name=".TouchActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity2"
             android:exported="false"
             android:label="@string/title_activity_settings2" />

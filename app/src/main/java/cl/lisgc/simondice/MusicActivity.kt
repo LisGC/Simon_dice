@@ -19,6 +19,9 @@ class MusicActivity : AppCompatActivity() {
         win = MediaPlayer.create(this,R.raw.victory_fanfare)
         lose = MediaPlayer.create(this,R.raw.ut_gameover)
 
+        music.start()
+        music.isLooping = true
+
         val reproduce = findViewById<Button>(R.id.buttonPlayMusic)
         reproduce.setOnClickListener{
 
@@ -58,6 +61,14 @@ class MusicActivity : AppCompatActivity() {
             music.pause()
             win.pause()
             lose.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(!music.isPlaying)
+        {
+            music.start()
         }
     }
 }
