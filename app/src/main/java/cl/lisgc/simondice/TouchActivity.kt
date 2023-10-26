@@ -21,19 +21,17 @@ private const val DEBUG_TAG = "Gestures"
             mDetector = GestureDetectorCompat(this, MyGestureListener())
 
             ratImg = findViewById(R.id.ratImage)
+            //ratImg.setImageResource(R.drawable.rata2)
 
         }
 
         override fun onTouchEvent(event: MotionEvent): Boolean {
             mDetector.onTouchEvent(event)
-
-            ratImg.setImageResource(R.drawable.rata2)
-
             return super.onTouchEvent(event)
         }
 
 
-        private class MyGestureListener : GestureDetector.SimpleOnGestureListener() {
+        class MyGestureListener : GestureDetector.SimpleOnGestureListener() {
 
             override fun onDown(event: MotionEvent): Boolean {
                 Log.d(DEBUG_TAG, "onDown: $event")
