@@ -6,3 +6,4 @@ Contiene las diferentes pantallas pedidas: splashscreen, principal, acerca de, c
 la segunda se refiere a la verificacion de gestos realizados por el usuario.
 
 **-Link video:** https://youtu.be/ehEfdtnaTYM
+**-Link build:** https://drive.google.com/file/d/1GAb0rPO2i68KUiQAa4tbWB4INM35Kg-D/view?usp=sharing
