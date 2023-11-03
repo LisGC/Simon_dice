@@ -16,28 +16,36 @@
         android:textColor="@color/darkBrown"
         android:textSize="34sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="286dp"
         android:layout_height="345dp"
-        app:srcCompat="@drawable/_856b2b24f6ae202fedf278e"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="109dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainTitle"
+        app:srcCompat="@drawable/_856b2b24f6ae202fedf278e" />
 
     <Button
         android:id="@+id/buttonAbout"
         android:layout_width="148dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/darkRose"
         android:text="@string/about"
         app:layout_constraintBottom_toTopOf="@+id/buttonSettings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlay" />
 
     <Button
         android:id="@+id/buttonSettings"
@@ -48,13 +56,13 @@
         android:text="@string/settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAbout" />
 
     <Button
         android:id="@+id/buttonPlay"
         android:layout_width="148dp"
         android:layout_height="58dp"
-        android:layout_marginTop="26dp"
         android:backgroundTint="@color/darkRose"
         android:text="@string/play"
         app:layout_constraintBottom_toTopOf="@+id/buttonAbout"
