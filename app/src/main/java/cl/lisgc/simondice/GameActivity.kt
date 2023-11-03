@@ -35,8 +35,8 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         music = MediaPlayer.create(this,R.raw.temafondo)
-        win = MediaPlayer.create(this,R.raw.victory_fanfare)
-        lose = MediaPlayer.create(this,R.raw.ut_gameover)
+        win = MediaPlayer.create(this,R.raw.nice)
+        lose = MediaPlayer.create(this,R.raw.bad)
 
         music.start()
         music.isLooping = true
