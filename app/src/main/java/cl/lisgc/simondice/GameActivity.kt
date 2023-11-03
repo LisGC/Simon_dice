@@ -9,6 +9,8 @@ import android.hardware.SensorManager
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.widget.Button
@@ -16,7 +18,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.GestureDetectorCompat
 
-private const val DEBUG_TAG = "Gestures"
 class GameActivity : AppCompatActivity() , SensorEventListener {
     private lateinit var ratImg : ImageView
     private lateinit var touchText : TextView
@@ -26,6 +27,15 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
     private lateinit var lose: MediaPlayer
     private var sensorManager: SensorManager? = null
     private var accelerometer: Sensor? = null
+    private val handler = Handler(Looper.getMainLooper())
+    private lateinit var points: TextView
+    private var point = 0
+
+    private val instructions = listOf(
+        "¡Desliza!",
+        "¡Agita!",
+        "¡Presiona por un tiempo!"
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
@@ -46,6 +56,11 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
         ratImg = findViewById(R.id.ratImage)
         touchText = findViewById(R.id.textTouch)
 
+        points = findViewById(R.id.textPuntos)
+        points.text = point.toString()
+
+        showRandomInstruction()
+
         val victory = findViewById<Button>(R.id.buttonVictory)
         victory.setOnClickListener{
 
@@ -64,6 +79,19 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
             }
         }
     }
+
+    private fun showRandomInstruction() {
+        val randomIndex = (0 until instructions.size).random()
+        val randomInstruction = instructions[randomIndex]
+        touchText.text = randomInstruction
+    }
+
+    private fun scheduleRandomInstruction(){
+        handler.postDelayed({
+            showRandomInstruction()
+        } ,3000)
+    }
+
     override fun onPause() {
         super.onPause()
         sensorManager?.unregisterListener(this)
@@ -91,15 +119,43 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
 
     inner class GestureListener : GestureDetector.SimpleOnGestureListener() {
         override fun onFling(event1: MotionEvent, event2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
-            ratImg.setImageResource(R.drawable.rata2)
-            touchText.setText(R.string.fling)
+
+            if(touchText.text == "¡Desliza!")
+            {
+                ratImg.setImageResource(R.drawable.rata2)
+                touchText.setText(R.string.done)
+                point += 1
+                points.text = point.toString()
+                win.start()
+                scheduleRandomInstruction()
+            }
+            else
+            {
+                ratImg.setImageResource(R.drawable.rata3)
+                touchText.setText(R.string.notDone)
+                lose.start()
+            }
             return true
         }
 
         override fun onLongPress(e: MotionEvent) {
             super.onLongPress(e)
-            ratImg.setImageResource(R.drawable.rata1)
-            touchText.setText(R.string.press)
+            if(touchText.text == "¡Presiona por un tiempo!")
+            {
+                ratImg.setImageResource(R.drawable.rata1)
+                touchText.setText(R.string.done)
+                point += 1
+                points.text = point.toString()
+                win.start()
+                scheduleRandomInstruction()
+            }
+            else
+            {
+                ratImg.setImageResource(R.drawable.rata3)
+                touchText.setText(R.string.notDone)
+                lose.start()
+            }
+
         }
     }
 
@@ -114,9 +170,22 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
             val threshold = 15.0f
 
             if (acceleration > threshold) {
-                // Change the background color to black
-                ratImg.setImageResource(R.drawable.rata4)
-                touchText.setText(R.string.swing)
+                if(touchText.text == "¡Agita!")
+                {
+                    ratImg.setImageResource(R.drawable.rata4)
+                    touchText.setText(R.string.done)
+                    point += 1
+                    points.text = point.toString()
+                    win.start()
+                    scheduleRandomInstruction()
+                }
+                else
+                {
+                    ratImg.setImageResource(R.drawable.rata3)
+                    touchText.setText(R.string.notDone)
+                    lose.start()
+                }
+
             }
         }
     }
