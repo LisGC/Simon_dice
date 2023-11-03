@@ -10,14 +10,14 @@
 
     <string name="about">Acerca</string>
     <string name="settings">Configuración</string>
-    <string name="music">Musica</string>
+    <string name="play">Jugar</string>
 
     <string name="fling">Deslizo</string>
     <string name="ontouch">Tap</string>
     <string name="press">Presiono</string>
     <string name="doAction">Realiza una accion</string>
 
-    <string name="play">Reproducir</string>
+
     <string name="victory">Victoria</string>
     <string name="defeat">Derrota</string>
     <string name="touch">Toca</string>

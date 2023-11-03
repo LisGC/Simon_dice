@@ -29,21 +29,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentAbout)
         }
 
-        ///Music
-        val musicNavegation = findViewById<Button>(R.id.buttonMusic)
+        ///Game
+        val gameNavegation = findViewById<Button>(R.id.buttonPlay)
 
-        musicNavegation.setOnClickListener {
-            val intentAbout = Intent(this,MusicActivity::class.java)
+        gameNavegation.setOnClickListener {
+            val intentAbout = Intent(this,GameActivity::class.java)
             startActivity(intentAbout)
         }
 
-        //Touch
-        val touchNavegation = findViewById<Button>(R.id.buttonTouch)
-
-        touchNavegation.setOnClickListener{
-            val intentAbout = Intent(this, TouchActivity::class.java)
-            startActivity(intentAbout)
-        }
     }
 
 }

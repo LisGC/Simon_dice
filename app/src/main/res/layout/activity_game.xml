@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/textTouch"
+        android:layout_width="316dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/doAction"
+        android:textAlignment="center"
+        android:textColor="@color/darkBrown"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ratImage"
+        android:layout_width="350dp"
+        android:layout_height="426dp"
+        android:layout_marginBottom="152dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTouch"
+        app:srcCompat="@drawable/rata3" />
+
+    <Button
+        android:id="@+id/buttonDefeat"
+        android:layout_width="157dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="@color/darkRose"
+        android:text="@string/defeat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonVictory"
+        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
+
+    <Button
+        android:id="@+id/buttonVictory"
+        android:layout_width="160dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp"
+        android:backgroundTint="@color/darkRose"
+        android:text="@string/victory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDefeat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
