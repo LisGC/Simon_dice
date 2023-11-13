@@ -25,45 +25,15 @@
 
     <ImageView
         android:id="@+id/ratImage"
-        android:layout_width="350dp"
-        android:layout_height="426dp"
+        android:layout_width="367dp"
+        android:layout_height="494dp"
         android:layout_marginBottom="152dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTouch"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/rata3" />
-
-    <Button
-        android:id="@+id/buttonDefeat"
-        android:layout_width="157dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="14dp"
-        android:backgroundTint="@color/darkRose"
-        android:text="@string/defeat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonVictory"
-        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
-
-    <Button
-        android:id="@+id/buttonVictory"
-        android:layout_width="160dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="14dp"
-        android:backgroundTint="@color/darkRose"
-        android:text="@string/victory"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonDefeat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
 
     <TextView
         android:id="@+id/textPuntaje"
@@ -71,16 +41,13 @@
         android:layout_height="47dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="27dp"
-        android:layout_marginBottom="19dp"
         android:fontFamily="sans-serif"
         android:text="@string/points"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonVictory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratImage"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
 
     <TextView
         android:id="@+id/textPuntos"
@@ -88,15 +55,12 @@
         android:layout_height="47dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="196dp"
-        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif"
         android:text=""
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDefeat"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratImage"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

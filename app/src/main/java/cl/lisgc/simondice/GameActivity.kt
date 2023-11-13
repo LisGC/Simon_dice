@@ -61,23 +61,6 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
 
         showRandomInstruction()
 
-        val victory = findViewById<Button>(R.id.buttonVictory)
-        victory.setOnClickListener{
-
-            if(!win.isPlaying)
-            {
-                win.start()
-            }
-        }
-
-        val defeat = findViewById<Button>(R.id.buttonDefeat)
-        defeat.setOnClickListener{
-
-            if(!lose.isPlaying)
-            {
-                lose.start()
-            }
-        }
     }
 
     private fun showRandomInstruction() {
