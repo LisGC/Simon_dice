@@ -12,21 +12,9 @@
     <string name="settings">Configuración</string>
     <string name="play">Jugar</string>
 
-    <string name="fling">Deslizo</string>
-    <string name="ontouch">Tap</string>
-    <string name="press">Presiono</string>
-    <string name="doAction">Realiza una accion</string>
-    <string name="swing">Agito</string>
-
     <string name="points">Puntos: </string>
     <string name="done">Acertaste</string>
     <string name="notDone">Fallaste</string>
-
-
-    <string name="victory">Victoria</string>
-    <string name="defeat">Derrota</string>
-    <string name="touch">Toca</string>
-    <string name="title_activity_settings2">SettingsActivity2</string>
 
     <!-- Preference Titles -->
     <string name="playerData_header">Datos del Jugador</string>
