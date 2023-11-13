@@ -17,8 +17,7 @@
             android:exported="false" />
         <activity
             android:name=".SettingsActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_settings2" />
+            android:exported="false"/>
 
         <activity
             android:name=".SplashScreenActivity"
