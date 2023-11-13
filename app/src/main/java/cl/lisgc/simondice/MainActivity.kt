@@ -12,22 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        ///About
-        val aboutNavegation = findViewById<Button>(R.id.buttonAbout)
-
-        aboutNavegation.setOnClickListener {
-            val intentAbout = Intent(this,AboutActivity::class.java)
-            startActivity(intentAbout)
-        }
-
-        ///Settings
-        val settingsNavegation = findViewById<Button>(R.id.buttonSettings)
-
-        settingsNavegation.setOnClickListener {
-            val intentAbout = Intent(this,SettingsActivity2::class.java)
-            startActivity(intentAbout)
-        }
+        setSupportActionBar(findViewById(R.id.toolbar))
 
         ///Game
         val gameNavegation = findViewById<Button>(R.id.buttonPlay)
@@ -37,6 +22,28 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentAbout)
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean{
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean{
+        when(item.itemId){
+            R.id.action_settings-> {
+                val intentSettings = Intent(this, SettingsActivity2::class.java)
+                startActivity(intentSettings)
+                return true
+
+            }
+            R.id.action_about -> {
+                val intentAbout = Intent(this,AboutActivity::class.java)
+                startActivity(intentAbout)
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 
 }

@@ -25,8 +25,8 @@
 
     <ImageView
         android:id="@+id/ratImage"
-        android:layout_width="367dp"
-        android:layout_height="494dp"
+        android:layout_width="325dp"
+        android:layout_height="401dp"
         android:layout_marginBottom="152dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

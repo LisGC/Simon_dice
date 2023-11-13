@@ -30,6 +30,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var points: TextView
     private var point = 0
+    private var seAgito: Boolean = false
 
     private val instructions = listOf(
         "¡Desliza!",
@@ -71,6 +72,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
 
     private fun scheduleRandomInstruction(){
         handler.postDelayed({
+            seAgito = false
             showRandomInstruction()
         } ,3000)
     }
@@ -144,13 +146,14 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
 
     override fun onSensorChanged(p0: SensorEvent) {
         if (p0.sensor.type == Sensor.TYPE_ACCELEROMETER) {
+            seAgito = true
             val x = p0.values[0]
             val y = p0.values[1]
             val z = p0.values[2]
             val acceleration = Math.sqrt(x * x + y * y + z * z.toDouble()).toFloat()
 
             // You can adjust the acceleration threshold based on your needs
-            val threshold = 15.0f
+            val threshold = 12.0f
 
             if (acceleration > threshold) {
                 if(touchText.text == "¡Agita!")
@@ -162,7 +165,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                     win.start()
                     scheduleRandomInstruction()
                 }
-                else
+                else if(seAgito == false)
                 {
                     ratImg.setImageResource(R.drawable.rata3)
                     touchText.setText(R.string.notDone)
