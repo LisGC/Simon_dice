@@ -13,3 +13,8 @@ Contiene ahora una pantalla de juego en donde estan tanto la musica como los sen
 
 **-Link video:** https://youtu.be/IiPH4c9yJS8  
 **-Link build:** https://drive.google.com/file/d/1Q7wi0MAUSLXU1mYZbDWkdQ0N0hRYvkXk/view?usp=sharing  
+
+**Cuarta Version(Version Final)**
+Se arreglaron detalles ademas de eliminar las cosas inecesarias y hacer que el juego sea mas detallado o terminado.
+**-Link video:** 
+**-Link build:** 
