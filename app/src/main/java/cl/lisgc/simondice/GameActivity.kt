@@ -60,8 +60,6 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
         win = MediaPlayer.create(this,R.raw.nice)
         lose = MediaPlayer.create(this,R.raw.bad)
 
-        music.start()
-        music.isLooping = true
 
         replay = findViewById(R.id.buttonReplay)
 
@@ -83,6 +81,10 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
             points.text = point.toString()
             ratImg.setImageResource(R.drawable.rata0)
         }
+
+
+        music.start()
+        music.isLooping = true
 
         showRandomInstruction()
 
@@ -111,16 +113,13 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
 
                 replay.visibility = View.VISIBLE
 
-            }
-            else
-            {
+            } else{
                 seAgito = false
                 seDeslizo = false
                 sePresiono = false
                 ratImg.setImageResource(R.drawable.rata0)
                 showRandomInstruction()
             }
-
 
         } ,5000)
     }
@@ -248,6 +247,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
             }
         }
     }
+
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
 
