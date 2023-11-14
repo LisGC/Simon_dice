@@ -13,6 +13,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.GestureDetector
 import android.view.MotionEvent
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -21,20 +22,25 @@ import androidx.core.view.GestureDetectorCompat
 class GameActivity : AppCompatActivity() , SensorEventListener {
     private lateinit var ratImg : ImageView
     private lateinit var touchText : TextView
-    private lateinit var mDetector: GestureDetectorCompat
     private lateinit var music: MediaPlayer
     private lateinit var win: MediaPlayer
     private lateinit var lose: MediaPlayer
+
+    private lateinit var mDetector: GestureDetectorCompat
     private var sensorManager: SensorManager? = null
     private var accelerometer: Sensor? = null
     private val handler = Handler(Looper.getMainLooper())
+
     private lateinit var points: TextView
     private lateinit var maxPoinT: TextView
     private var point = 0
     private var maxPoints = 0
+
     private var seAgito: Boolean = false
     private var seDeslizo: Boolean = false
     private var sePresiono: Boolean = false
+
+    private lateinit var replay: Button
 
 
     private val instructions = listOf(
@@ -57,6 +63,8 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
         music.start()
         music.isLooping = true
 
+        replay = findViewById(R.id.buttonReplay)
+
         mDetector = GestureDetectorCompat(this, GestureListener())
 
         ratImg = findViewById(R.id.ratImage)
@@ -67,6 +75,14 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
 
         maxPoinT = findViewById(R.id.textMaxPuntos)
         maxPoinT.text = maxPoints.toString()
+
+        replay.setOnClickListener {
+            replay.visibility = View.INVISIBLE
+            showRandomInstruction()
+            point  = 0
+            points.text = point.toString()
+            ratImg.setImageResource(R.drawable.rata0)
+        }
 
         showRandomInstruction()
 
@@ -93,13 +109,15 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                     maxPoinT.text = maxPoints.toString()
                 }
 
+                replay.visibility = View.VISIBLE
+
             }
             else
             {
                 seAgito = false
                 seDeslizo = false
                 sePresiono = false
-
+                ratImg.setImageResource(R.drawable.rata0)
                 showRandomInstruction()
             }
 
@@ -148,6 +166,14 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                 ratImg.setImageResource(R.drawable.rata3)
                 touchText.setText(R.string.notDone)
                 lose.start()
+
+                if(maxPoints < point)
+                {
+                    maxPoints = point
+                    maxPoinT.text = maxPoints.toString()
+                }
+
+                replay.visibility = View.VISIBLE
             }
             return true
         }
@@ -167,6 +193,14 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                 ratImg.setImageResource(R.drawable.rata3)
                 touchText.setText(R.string.notDone)
                 lose.start()
+
+                if(maxPoints < point)
+                {
+                    maxPoints = point
+                    maxPoinT.text = maxPoints.toString()
+                }
+
+                replay.visibility = View.VISIBLE
             }
 
         }
@@ -186,6 +220,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
             if (acceleration > threshold) {
                 if(touchText.text == "¡Agita!")
                 {
+                    seAgito = true
                     ratImg.setImageResource(R.drawable.rata4)
                     touchText.setText(R.string.done)
                     point += 1
@@ -197,6 +232,14 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                     ratImg.setImageResource(R.drawable.rata3)
                     touchText.setText(R.string.notDone)
                     lose.start()
+
+                    if(maxPoints < point)
+                    {
+                        maxPoints = point
+                        maxPoinT.text = maxPoints.toString()
+                    }
+
+                    replay.visibility = View.VISIBLE
 
                 }
 
