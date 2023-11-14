@@ -122,7 +122,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
             }
 
 
-        } ,3000)
+        } ,5000)
     }
 
     override fun onPause() {
@@ -155,6 +155,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
 
             if(touchText.text == "¡Desliza!")
             {
+                seDeslizo = true
                 ratImg.setImageResource(R.drawable.rata2)
                 touchText.setText(R.string.done)
                 point += 1
@@ -182,6 +183,7 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
             super.onLongPress(e)
             if(touchText.text == "¡Presiona por un tiempo!")
             {
+                sePresiono = true
                 ratImg.setImageResource(R.drawable.rata1)
                 touchText.setText(R.string.done)
                 point += 1
