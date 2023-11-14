@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTouch"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/rata3" />
+        app:srcCompat="@drawable/rata0" />
 
     <TextView
         android:id="@+id/textPuntos"
