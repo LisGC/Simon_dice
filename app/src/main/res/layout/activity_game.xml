@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@color/aqua"
     tools:context=".GameActivity">
 
     <TextView
         android:id="@+id/textTouch"
-        android:layout_width="316dp"
-        android:layout_height="103dp"
+        android:layout_width="322dp"
+        android:layout_height="97dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif"
         android:text="a"
@@ -25,8 +25,8 @@
 
     <ImageView
         android:id="@+id/ratImage"
-        android:layout_width="325dp"
-        android:layout_height="401dp"
+        android:layout_width="322dp"
+        android:layout_height="372dp"
         android:layout_marginBottom="152dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +36,57 @@
         app:srcCompat="@drawable/rata3" />
 
     <TextView
+        android:id="@+id/textPuntos"
+        android:layout_width="78dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="200dp"
+        android:fontFamily="sans-serif"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
+
+    <TextView
+        android:id="@+id/textMaxPuntaje"
+        android:layout_width="262dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="136dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/maxPoints"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPuntos" />
+
+    <TextView
+        android:id="@+id/textMaxPuntos"
+        android:layout_width="76dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="136dp"
+        android:fontFamily="sans-serif"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
+
+    <TextView
         android:id="@+id/textPuntaje"
         android:layout_width="120dp"
         android:layout_height="47dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
         android:text="@string/points"
         android:textAlignment="center"
@@ -49,18 +95,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratImage" />
 
-    <TextView
-        android:id="@+id/textPuntos"
-        android:layout_width="78dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="196dp"
-        android:fontFamily="sans-serif"
-        android:text=""
+    <Button
+        android:id="@+id/buttonReplay"
+        android:layout_width="179dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/replay"
         android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratImage" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMaxPuntaje" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

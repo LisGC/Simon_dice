@@ -29,8 +29,13 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
     private var accelerometer: Sensor? = null
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var points: TextView
+    private lateinit var maxPoinT: TextView
     private var point = 0
+    private var maxPoints = 0
     private var seAgito: Boolean = false
+    private var seDeslizo: Boolean = false
+    private var sePresiono: Boolean = false
+
 
     private val instructions = listOf(
         "¡Desliza!",
@@ -60,6 +65,9 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
         points = findViewById(R.id.textPuntos)
         points.text = point.toString()
 
+        maxPoinT = findViewById(R.id.textMaxPuntos)
+        maxPoinT.text = maxPoints.toString()
+
         showRandomInstruction()
 
     }
@@ -68,12 +76,34 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
         val randomIndex = (0 until instructions.size).random()
         val randomInstruction = instructions[randomIndex]
         touchText.text = randomInstruction
+        scheduleRandomInstruction()
     }
 
     private fun scheduleRandomInstruction(){
         handler.postDelayed({
-            seAgito = false
-            showRandomInstruction()
+            if(seAgito == false && seDeslizo == false && sePresiono == false)
+            {
+                touchText.setText(R.string.notDone)
+                lose.start()
+                ratImg.setImageResource(R.drawable.rata3)
+
+                if(maxPoints < point)
+                {
+                    maxPoints = point
+                    maxPoinT.text = maxPoints.toString()
+                }
+
+            }
+            else
+            {
+                seAgito = false
+                seDeslizo = false
+                sePresiono = false
+
+                showRandomInstruction()
+            }
+
+
         } ,3000)
     }
 
@@ -112,7 +142,6 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                 point += 1
                 points.text = point.toString()
                 win.start()
-                scheduleRandomInstruction()
             }
             else
             {
@@ -132,7 +161,6 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                 point += 1
                 points.text = point.toString()
                 win.start()
-                scheduleRandomInstruction()
             }
             else
             {
@@ -163,13 +191,13 @@ class GameActivity : AppCompatActivity() , SensorEventListener {
                     point += 1
                     points.text = point.toString()
                     win.start()
-                    scheduleRandomInstruction()
                 }
                 else if(seAgito == false)
                 {
                     ratImg.setImageResource(R.drawable.rata3)
                     touchText.setText(R.string.notDone)
                     lose.start()
+
                 }
 
             }

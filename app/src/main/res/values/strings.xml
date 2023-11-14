@@ -13,8 +13,10 @@
     <string name="play">Jugar</string>
 
     <string name="points">Puntos: </string>
+    <string name="maxPoints">Puntaje Maximo: </string>
     <string name="done">Acertaste</string>
     <string name="notDone">Fallaste</string>
+    <string name="replay">Volver a Jugar</string>
 
     <!-- Preference Titles -->
     <string name="playerData_header">Datos del Jugador</string>
